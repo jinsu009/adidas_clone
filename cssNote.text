@@ -1,0 +1,21 @@
+[ CSS 정리 ]
+
+▷ 변수 선언하기 
+    :root{
+        --a : pink;
+    }
+
+    .test_class{
+        color:var(--a);
+    }
+
+▷ :not 
+    § 이미 지정된 스타일에서 특정한 요소를 제외시킬 경우 사용
+        -> :not(div){...}
+
+▷ opacity
+    § 투명도 조절 , 기본값 100%(1) , 0%에 가까울수록 투명해진다.
+
+▷ unicode-bidi 
+    § direction 속성과 함께 문서의 양방향 텍스트 처리 방법을 설정
+        -> normal : rabbit , bidi-overrid : tibbar;
