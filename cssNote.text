@@ -19,3 +19,7 @@
 ▷ unicode-bidi 
     § direction 속성과 함께 문서의 양방향 텍스트 처리 방법을 설정
         -> normal : rabbit , bidi-overrid : tibbar;
+
+  ▷ transform: translateY(3px) rotate(45deg);
+    § deg : 각도를 도 단위로 나타냄 , 1회 전 은 360deg
+        (그 외 : rad, turn / 360deg == 2rad == 1turn)

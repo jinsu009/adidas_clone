@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta data-n-head="ssr" name="smartbanner:icon-apple" content="/logo_app_adidasarena.png">
     <meta data-n-head="ssr" name="smartbanner:icon-google" content="/logo_app_adidasarena.png">
-    <title>Document</title>
+    <link rel="preload" href="/_nuxt/fonts/ITCFranklinGothicLT-DmCp.fb6cb00.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/_nuxt/fonts/ITCFranklinGothicLT-DmCp.7aadaed.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="./adidas.css" />
+    <title>Document</title>
 </head>
 <body>
     <!--<h1>HTML / CSS / javascript</h1>-->
@@ -19,18 +21,54 @@
                 </g>
             </svg>
         </a>
+        <a class="app-header__programmation">
+            <p class="P1 bold">Programmation</p>
+        </a>
         <div class="app-header__burger">
-            <p>Menu</p>
+            <p class="P1 app-header__burger__menu bold">Menu</p>
             <div class="burger_div">
             <input type="checkbox" id="icon"/>
-            <label>
-                <div></div>
-                <div></div>               
+            <label for="icon">
+                <span></span>
+                <span></span>               
             </label>
         </div>
         </div>
     </div> <!-- app-header end -->
     
+
+    <main class="app-home app-main">
+        <div class="app-home-hero block-inner">
+            <div class="app-home-hero__first-visual" 
+            style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 0%, 0px) rotate(5deg) scale(1.00001, 1.00001); opacity: 1;">
+                <picture class="picture-absolute">
+                    <img src="https://adidasarena.directus.app/assets/8f065a57-fc7a-469c-bde9-2b461df28e20?format=jpg&amp;quality=90&amp;width=400" srcset="https://adidasarena.directus.app/assets/8f065a57-fc7a-469c-bde9-2b461df28e20?format=jpg&amp;quality=90&amp;width=230 230w, https://adidasarena.directus.app/assets/8f065a57-fc7a-469c-bde9-2b461df28e20?format=jpg&amp;quality=90&amp;width=400 400w" sizes="(max-width: 768px) 30vw, 50vw" alt="Hero picture top">
+                </picture>
+            </div>
+            <div class="app-home-hero__second-visual"
+            style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 0%, 0px) rotate(-6deg); opacity: 1;"
+            >
+                <picture class="picture-absolute">
+                    <img src="https://adidasarena.directus.app/assets/19c1fd05-4af0-421c-848b-ac29445d78d2?format=jpg&amp;quality=90&amp;width=400" srcset="https://adidasarena.directus.app/assets/19c1fd05-4af0-421c-848b-ac29445d78d2?format=jpg&amp;quality=90&amp;width=230 230w, https://adidasarena.directus.app/assets/19c1fd05-4af0-421c-848b-ac29445d78d2?format=jpg&amp;quality=90&amp;width=400 400w" sizes="(max-width: 768px) 30vw, 50vw" alt="Hero bottom alt">
+                </picture>
+            </div>
+            <div class="app-home-hero__inner grid">
+                <div class="app-element-hero-instructions">
+                    <div class="app-element-hero-instructions__wrapper">
+                        <div class="app-element-hero-instructions__lottie"></div>
+                    </div>
+                </div>
+                <div class="app-home-hero__scroll-indicator">
+                    <p class="P1 regular" style="color: var(--c-black);">SCROLL</p> 
+                    <div class="app-home-hero__scroll-indicator__icon">
+                        <svg width="19" height="79" fill="none" xmlns="http://www.w3.org/2000/svg" style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 0px, 0px);">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.938 78.651V79h1v-.548l.049-.18a21.004 21.004 0 0 1 1.722-4.28c1.308-2.414 3.323-4.8 6.241-5.232l.495-.073-.146-.99-.495.074c-3.401.502-5.625 3.254-6.975 5.744a20.782 20.782 0 0 0-.89 1.868V0h-1v75.43a22.17 22.17 0 0 0-1.007-2.235c-1.347-2.58-3.571-5.395-6.927-5.43l-.5-.005-.01 1 .5.005c2.748.028 4.723 2.35 6.05 4.893.652 1.248 1.12 2.5 1.425 3.44a22.885 22.885 0 0 1 .437 1.528l.004.02.001.004v.001h.026Z" fill="#181818"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     
 
     <script src="./adidas.js" type="text/javascript"></script>

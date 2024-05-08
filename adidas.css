@@ -1,7 +1,48 @@
+@font-face {
+    font-display: swap;
+    font-family: ITCFranklinGothicLT-DmCp;
+    font-style: normal;
+    font-weight: 400;
+    src: 
+    url(../adidas_clone/fonts/ITCFranklinGothicLT-DmCp.fb6cb00.woff) format("woff"),
+    url(../adidas_clone/fonts/ITCFranklinGothicLT-DmCp.7aadaed.woff2) format("woff2")
+}
+
+.block,.grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 93.6vw;
+    max-width: var(--layout-width)
+}
+
+.grid,.grid-fullwidth,.grid-inner {
+    grid-gap: 5vw;
+    grid-gap: var(--layout-columns-gap);
+    display: grid;
+    grid-template-columns: repeat(6,minmax(0,1fr));
+    grid-template-columns: repeat(var(--layout-columns-count),minmax(0,1fr))
+}
+
+.block-inner,.grid-inner {
+    padding-left: 3.2vw;
+    padding-left: var(--layout-margin);
+    padding-right: 3.2vw;
+    padding-right: var(--layout-margin)
+}
+
 :root{
     --dash-clone-body-color : #f5f5f3;
     --title-color-black:#181818;
     --logo-fill-color:#1D1D1B;
+
+    --c-white: #fff;
+    --c-black: #181818;
+    --c-blue-adidas: #00f;
+    --c-light-blue: #00f;
+    --c-red-adidas: #e3530f;
+    --c-light-red: #ed5c5a;
+    --c-grey: #f5f5f3;
+    --c-transparent: transparent;
 
     --ease-in-quad: cubic-bezier(0.55,0.085,0.68,0.53);
     --ease-in-cubic: cubic-bezier(0.55,0.055,0.675,0.19);
@@ -20,25 +61,95 @@
     --ease-in-out-quart: cubic-bezier(0.77,0,0.175,1);
     --ease-in-out-quint: cubic-bezier(0.86,0,0.07,1);
     --ease-in-out-expo: cubic-bezier(1,0,0,1);
-    --ease-in-out-circ: cubic-bezier(0.785,0.135,0.15,0.86)
+    --ease-in-out-circ: cubic-bezier(0.785,0.135,0.15,0.86);
+
+    --layout-columns-count: 6;
+    --layout-columns-gap: 5.3333333333vw;
+    --layout-margin: 3.2vw;
+    --layout-width: calc(100vw - var(--layout-margin)*2);
+    --layout-column-width: calc((var(--layout-width) - ((var(--layout-columns-count) - 1)*var(--layout-columns-gap)))/var(--layout-columns-count));
 }
 
-body{
-    background-color: var(--dash-clone-body-color);
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+body {
+    margin: 0;
+    background-color: var(--dash-clone-body-color);    
 }
 
-h1{
-    margin: .67em 0;
+body,html {
+    height: auto;
+    min-height: 100vh;
+    overscroll-behavior-y: none
 }
 
-a{
+main {
+    display: block
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+pre {
+    font-family: monospace,monospace;
+    font-size: 1em
+}
+
+a {
     text-decoration: none;
     background-color: transparent;
     color:var(--logo-fill-color);;
 }
 
+img,video {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+img,picture,video {
+    height: 100%;
+    width: 100%
+}
+
+picture {
+    display: block
+}
+
+.picture-absolute {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+:not(iframe):not(canvas):not(img):not(svg):not(video):not(svg *) {
+    all: unset;
+    display: revert
+}
+
+*,:after,:before {
+    box-sizing: border-box!important
+}
+
+
 .app-header {
-    border:1px solid orange;
     display: flex;
     height: 40px;
     justify-content: space-between;
@@ -55,7 +166,6 @@ a{
     transform: translateX(-50%);
     z-index: 2;
 }
-
 
 .app-header__burger {
     align-items: center;
@@ -76,8 +186,7 @@ a{
     justify-content: center;
     outline: none;
     padding: 0;
-    width: 30px
-    
+    width: 30px    
 }
 
 .app-header__burger__icon:before {
@@ -114,7 +223,7 @@ input[id="icon"]+label{
     position: relative;
 }
 
-input[id="icon"]+label > div {
+input[id="icon"]+label > span {
     display: block;
     height: 3px;
     width: 100%;
@@ -123,10 +232,322 @@ input[id="icon"]+label > div {
     position: absolute;
 }
 
-input[id="icon"] + label > div:nth-child(1){
+input[id="icon"] + label > span:nth-child(1){
     transform: translateY(3px)
 }
 
-input[id="icon"] + label > div:nth-child(2){
+input[id="icon"] + label > span:nth-child(2){
     transform: translateY(14px)
+}
+
+input[id="icon"]:checked + label > span:nth-child(1){
+    transform: translateY(14px) rotate(45deg);
+}
+
+input[id="icon"]:checked + label > span:nth-child(2){
+    transform: translateY(14px) rotate(-45deg);
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .P1 {
+    font-size: 1.25vw;
+    line-height: 1.3888888889vw;
+    text-transform: uppercase;
+}
+
+@media(max-width: 800px) {
+    .P1 {
+        font-size:3.7333333333vw;
+        line-height: 4.2666666667vw
+    }
+}
+
+.app-header__burger__menu.P1 {
+    font-size: 16px;
+    line-height: 16px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    transition: color .4s var(--ease-out-cubic);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.P1.regular {
+    font-family: ITCFranklinGothicLT-BkCp
+}
+
+.P1 strong,.P1.bold,.P1.medium {
+    font-family: ITCFranklinGothicLT-DmCp
+}
+
+.app-header__programmation .P1.bold {
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    transition: color .4s var(--ease-out-cubic);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.app-header__programmation {
+    align-self: center;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1.7vw
+}
+/*
+    app header end
+*/
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    width: 100%
+}
+
+.app-main {
+    z-index: 1
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-home-hero {
+    height: 100vh;
+    padding-bottom: 3vw;
+    padding-top: 3vw;
+    position: relative;
+    width: 100%
+}
+
+.app-home-hero__inner {
+    border: 1px solid #181818;
+    height: 100%;
+    position: relative;
+    width: 100%
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright © 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-element-hero-instructions {
+    align-items: flex-end;
+    background: hsla(0,0%,100%,.65);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding-bottom: 7vw;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity .65s var(--ease-in-out-cubic);
+    width: 100%;
+    z-index: 1
+}
+
+.app-element-hero-instructions__lottie {
+    height: auto;
+    margin-bottom: 1.3vw;
+    width: 11vw
+}
+.app-home-hero__first-visual {
+    aspect-ratio: 350/440;
+    left: var(--layout-margin);
+    min-width: 250px;
+    position: absolute!important;
+    top: -14vw;
+    transform: rotate(5deg);
+    width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+}
+
+.app-home-hero__first-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__first-visual {
+        aspect-ratio:185/235;
+        min-width: 0;
+        min-width: auto;
+        top: -13vw;
+        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+    }
+}
+
+.app-home-hero__second-visual {
+    aspect-ratio: 255/320;
+    bottom: min(-20px,7vw);
+    left: calc(var(--layout-column-width)*3.75 + var(--layout-columns-gap)*2.75);
+    min-width: 200px;
+    position: absolute!important;
+    transform: rotate(-6deg);
+    width: calc(var(--layout-column-width)*2.25 + var(--layout-columns-gap)*1.25)
+}
+
+.app-home-hero__second-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__second-visual {
+        aspect-ratio:115/145;
+        min-width: 0;
+        min-width: auto;
+        top: 133vw;
+        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
+    }
+}
+
+@media(min-width: 800px) {
+    :root {
+        --layout-columns-count:12;
+        --layout-columns-gap: 2.1vw;
+        --layout-margin: 3vw;
+    }
+}
+
+.app-home-hero__first-visual {
+    aspect-ratio: 350/440;
+    left: var(--layout-margin);
+    min-width: 250px;
+    position: absolute!important;
+    top: -14vw;
+    transform: rotate(5deg);
+    width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+}
+
+.app-home-hero__first-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__first-visual {
+        aspect-ratio:185/235;
+        min-width: 0;
+        min-width: auto;
+        top: -13vw;
+        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+    }
+}
+
+.app-home-hero__second-visual {
+    aspect-ratio: 255/320;
+    bottom: min(-20px,7vw);
+    left: calc(var(--layout-column-width)*3.75 + var(--layout-columns-gap)*2.75);
+    min-width: 200px;
+    position: absolute!important;
+    transform: rotate(-6deg);
+    width: calc(var(--layout-column-width)*2.25 + var(--layout-columns-gap)*1.25)
+}
+
+.app-home-hero__second-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__second-visual {
+        aspect-ratio:115/145;
+        min-width: 0;
+        min-width: auto;
+        top: 133vw;
+        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
+    }
+}
+
+.app-home-hero__scroll-indicator {
+    align-items: center;
+    border-right: 1px solid #181818;
+    border-top: 1px solid #181818;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    padding: 1.8vw 1vw;
+    position: absolute;
+    transition: opacity .35s var(--ease-in-out-cubic);
+    transition-delay: .4s
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__scroll-indicator {
+        display:none
+    }
+}
+
+.app-home-hero__scroll-indicator.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0s
+}
+
+.app-home-hero__scroll-indicator .P1 {
+    font-size: 12px;
+    line-height: 15px
+}
+
+.app-home-hero__scroll-indicator__icon {
+    margin-top: 1.8vw;
+    overflow: hidden
 }
