@@ -20,6 +20,25 @@
     § direction 속성과 함께 문서의 양방향 텍스트 처리 방법을 설정
         -> normal : rabbit , bidi-overrid : tibbar;
 
-  ▷ transform: translateY(3px) rotate(45deg);
+▷ transform: translateY(3px) rotate(45deg);
     § deg : 각도를 도 단위로 나타냄 , 1회 전 은 360deg
         (그 외 : rad, turn / 360deg == 2rad == 1turn)
+
+▷ align 
+    - align-content : 아이템의 상하관계 정렬 설정
+    - align-items : 아이템의 내부 상하관계 정렬 설정
+    - align-self : 개별적인 콘텐츠 아이템의 정렬 설정 
+
+▷ flex
+    - flex-container : flex-direction, flex-wrap, justify-content, align-items, align-content
+    - flex-item : flex , flex-grow, flex-shrink, flex-basis, align-self, order
+
+    - flex-basis : 콘텐츠 아이템의 기본 값 설정
+    - flex-direction : 콘텐츠 아이템의 정렬방향 설정
+    - flex-flow : 콘텐츠 아이템의 정렬방향과 줄 속성을 설정 
+    - flex-grow : 콘텐츠 아이템의 크기를 숫자를 통해 확대 
+    - flex-shrink : - 축소
+    - flex-wrap : 콘텐츠 아이템의 줄 속성을 설정 
+
+    * justify-content : 아이템의 좌우관계 정렬 상태 설정
+    * order : 콘텐츠 아이템의 순서 설정 

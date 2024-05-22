@@ -8,28 +8,6 @@
     url(../adidas_clone/fonts/ITCFranklinGothicLT-DmCp.7aadaed.woff2) format("woff2")
 }
 
-.block,.grid {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 93.6vw;
-    max-width: var(--layout-width)
-}
-
-.grid,.grid-fullwidth,.grid-inner {
-    grid-gap: 5vw;
-    grid-gap: var(--layout-columns-gap);
-    display: grid;
-    grid-template-columns: repeat(6,minmax(0,1fr));
-    grid-template-columns: repeat(var(--layout-columns-count),minmax(0,1fr))
-}
-
-.block-inner,.grid-inner {
-    padding-left: 3.2vw;
-    padding-left: var(--layout-margin);
-    padding-right: 3.2vw;
-    padding-right: var(--layout-margin)
-}
-
 :root{
     --dash-clone-body-color : #f5f5f3;
     --title-color-black:#181818;
@@ -70,6 +48,27 @@
     --layout-column-width: calc((var(--layout-width) - ((var(--layout-columns-count) - 1)*var(--layout-columns-gap)))/var(--layout-columns-count));
 }
 
+.block,.grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 93.6vw;
+    max-width: var(--layout-width)
+}
+
+.grid,.grid-fullwidth,.grid-inner {
+    grid-gap: 5vw;
+    grid-gap: var(--layout-columns-gap);
+    display: grid;
+    grid-template-columns: repeat(6,minmax(0,1fr));
+    grid-template-columns: repeat(var(--layout-columns-count),minmax(0,1fr))
+}
+
+.block-inner,.grid-inner {
+    padding-left: 3.2vw;
+    padding-left: var(--layout-margin);
+    padding-right: 3.2vw;
+    padding-right: var(--layout-margin)
+}
 
 /*!
  * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
@@ -147,7 +146,6 @@ picture {
 *,:after,:before {
     box-sizing: border-box!important
 }
-
 
 .app-header {
     display: flex;
@@ -240,6 +238,9 @@ input[id="icon"] + label > span:nth-child(2){
     transform: translateY(14px)
 }
 
+/*
+    burger menu x 표시
+*/ 
 input[id="icon"]:checked + label > span:nth-child(1){
     transform: translateY(14px) rotate(45deg);
 }
@@ -256,13 +257,6 @@ input[id="icon"]:checked + label > span:nth-child(2){
     font-size: 1.25vw;
     line-height: 1.3888888889vw;
     text-transform: uppercase;
-}
-
-@media(max-width: 800px) {
-    .P1 {
-        font-size:3.7333333333vw;
-        line-height: 4.2666666667vw
-    }
 }
 
 .app-header__burger__menu.P1 {
@@ -323,6 +317,7 @@ input[id="icon"]:checked + label > span:nth-child(2){
 /*!
  * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
  * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ * 좌측 상단 사람 이미지 
  */
  .app-home-hero {
     height: 100vh;
@@ -337,6 +332,51 @@ input[id="icon"]:checked + label > span:nth-child(2){
     height: 100%;
     position: relative;
     width: 100%
+}
+
+.app-home-hero__inner .app-element-scroll-indicator {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: opacity .35s var(--ease-in-out-cubic);
+    transition-delay: .65s
+}
+
+.app-home-hero__inner .app-element-scroll-indicator.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0s
+}
+
+.app-home-hero__stars,.app-home-hero__sticker {
+    transition: transform .35s var(--ease-in-out-cubic);
+    transition-delay: .65s
+}
+
+.app-home-hero__stars.hide,.app-home-hero__sticker.hide {
+    transform: translate(-50%,-50%) scale(0) rotate(45deg);
+    transition-delay: 0s
+}
+
+.app-home-hero__sticker {
+    grid-column: 8/span 5;
+    height: min(110px,8vw);
+    left: 0;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%,-50%) scale(1) rotate(0deg);
+    width: min(110px,8vw);
+    z-index: 9
+}
+
+.app-home-hero__stars {
+    grid-column: 7/span 2;
+    left: -12%;
+    position: absolute;
+    top: 17%;
+    transform: translate(-50%,-50%) scale(1) rotate(0deg);
+    z-index: 9
 }
 
 /*!
@@ -365,83 +405,6 @@ input[id="icon"]:checked + label > span:nth-child(2){
     margin-bottom: 1.3vw;
     width: 11vw
 }
-.app-home-hero__first-visual {
-    aspect-ratio: 350/440;
-    left: var(--layout-margin);
-    min-width: 250px;
-    position: absolute!important;
-    top: -14vw;
-    transform: rotate(5deg);
-    width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
-}
-
-.app-home-hero__first-visual:before {
-    background-image: url(/imgs/noise.webp);
-    background-size: 35%;
-    content: "";
-    height: 100%;
-    left: 0;
-    mix-blend-mode: hard-light;
-    opacity: .35;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 9
-}
-
-@media(max-width: 800px) {
-    .app-home-hero__first-visual {
-        aspect-ratio:185/235;
-        min-width: 0;
-        min-width: auto;
-        top: -13vw;
-        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
-    }
-}
-
-.app-home-hero__second-visual {
-    aspect-ratio: 255/320;
-    bottom: min(-20px,7vw);
-    left: calc(var(--layout-column-width)*3.75 + var(--layout-columns-gap)*2.75);
-    min-width: 200px;
-    position: absolute!important;
-    transform: rotate(-6deg);
-    width: calc(var(--layout-column-width)*2.25 + var(--layout-columns-gap)*1.25)
-}
-
-.app-home-hero__second-visual:before {
-    background-image: url(/imgs/noise.webp);
-    background-size: 35%;
-    content: "";
-    height: 100%;
-    left: 0;
-    mix-blend-mode: hard-light;
-    opacity: .35;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 9
-}
-
-@media(max-width: 800px) {
-    .app-home-hero__second-visual {
-        aspect-ratio:115/145;
-        min-width: 0;
-        min-width: auto;
-        top: 133vw;
-        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
-    }
-}
-
-@media(min-width: 800px) {
-    :root {
-        --layout-columns-count:12;
-        --layout-columns-gap: 2.1vw;
-        --layout-margin: 3vw;
-    }
-}
 
 .app-home-hero__first-visual {
     aspect-ratio: 350/440;
@@ -468,16 +431,9 @@ input[id="icon"]:checked + label > span:nth-child(2){
     z-index: 9
 }
 
-@media(max-width: 800px) {
-    .app-home-hero__first-visual {
-        aspect-ratio:185/235;
-        min-width: 0;
-        min-width: auto;
-        top: -13vw;
-        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
-    }
-}
-
+/*
+* 좌측 하단 농구공 사람 이미지 
+*/
 .app-home-hero__second-visual {
     aspect-ratio: 255/320;
     bottom: min(-20px,7vw);
@@ -503,14 +459,54 @@ input[id="icon"]:checked + label > span:nth-child(2){
     z-index: 9
 }
 
-@media(max-width: 800px) {
-    .app-home-hero__second-visual {
-        aspect-ratio:115/145;
-        min-width: 0;
-        min-width: auto;
-        top: 133vw;
-        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
-    }
+.app-home-hero__first-visual {
+    aspect-ratio: 350/440;
+    left: var(--layout-margin);
+    min-width: 250px;
+    position: absolute!important;
+    top: -14vw;
+    transform: rotate(5deg);
+    width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+}
+
+.app-home-hero__first-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+.app-home-hero__second-visual {
+    aspect-ratio: 255/320;
+    bottom: min(-20px,7vw);
+    left: calc(var(--layout-column-width)*3.75 + var(--layout-columns-gap)*2.75);
+    min-width: 200px;
+    position: absolute!important;
+    transform: rotate(-6deg);
+    width: calc(var(--layout-column-width)*2.25 + var(--layout-columns-gap)*1.25)
+}
+
+.app-home-hero__second-visual:before {
+    background-image: url(/imgs/noise.webp);
+    background-size: 35%;
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: hard-light;
+    opacity: .35;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
 }
 
 .app-home-hero__scroll-indicator {
@@ -530,12 +526,6 @@ input[id="icon"]:checked + label > span:nth-child(2){
     transition-delay: .4s
 }
 
-@media(max-width: 800px) {
-    .app-home-hero__scroll-indicator {
-        display:none
-    }
-}
-
 .app-home-hero__scroll-indicator.hide {
     opacity: 0;
     pointer-events: none;
@@ -550,4 +540,220 @@ input[id="icon"]:checked + label > span:nth-child(2){
 .app-home-hero__scroll-indicator__icon {
     margin-top: 1.8vw;
     overflow: hidden
+}   
+/* indicator end */
+
+.app-home-hero:not(.open) .app-home-hero__view-exterior {
+    cursor: pointer
+}
+
+.app-home-hero__view-exterior {
+    align-self: flex-end;
+    aspect-ratio: 575/885;
+    bottom: 0;
+    display: flex;
+    grid-column: 8/span 5;
+    height: auto;
+    justify-content: space-between;
+    max-height: calc(85vh - 5.55556vw);
+    position: absolute;
+    right: 0;
+    transform-origin: right bottom;
+    width: 100%;
+    will-change: transform,width,height
+}
+
+.app-home-hero__title.app-element-rich-text {
+    align-self: center;
+    grid-column: 2/span 7;
+    left: -5%;
+    max-width: 700px;
+    position: relative;
+    z-index: 1
+}
+
+.app-home-hero__title.app-element-rich-text .app-atoms-stroke-text {
+    -webkit-text-stroke: 1px var(--c-black);
+    -webkit-text-fill-color: transparent
+}
+
+.app-home-hero__title.app-element-rich-text.hide {
+    pointer-events: none
+}
+
+.app-home-hero__title.app-element-rich-text .lineParent {
+    overflow: hidden
+}
+
+.app-home-hero__title.app-element-rich-text .H1,.app-home-hero__title.app-element-rich-text h1 {
+    font-size: min(130px,9vw);
+    line-height: min(110px,8vw)
+}
+
+.H1 .bold,.H1 strong,.H1.bold,.H1.medium {
+    font-family: ITCFranklinGothicLT-DmCp
+}
+
+.H1__parent {
+    overflow: hidden
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-atoms-corner-points {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9
+}
+
+.app-atoms-corner-points__line {
+    background-color: var(--border-color);
+    position: absolute
+}
+
+.app-atoms-corner-points__line--top {
+    height: 1px;
+    left: 0;
+    top: 0;
+    transform: translateY(-100%);
+    width: 100%
+}
+
+.app-atoms-corner-points__line--bottom {
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%
+}
+
+.app-atoms-corner-points__line--right {
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    width: 1px
+}
+
+.app-atoms-corner-points__line--left {
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    width: 1px
+}
+
+.app-atoms-corner-points__item {
+    background: var(--points-color);
+    height: calc(var(--size-points)*1px);
+    position: absolute;
+    width: calc(var(--size-points)*1px)
+}
+
+.app-atoms-corner-points__item--top-left {
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%)
+}
+
+.app-atoms-corner-points__item--top-right {
+    right: 0;
+    top: 0;
+    transform: translate(50%,-50%)
+}
+
+.app-atoms-corner-points__item--bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%,50%)
+}
+
+.app-atoms-corner-points__item--bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%,50%)
+}
+
+@media(max-width: 800px) {
+    .app-home-hero__inner {
+        border:none
+    }
+    .app-home-hero__inner .app-element-enter-arena {
+        display: none
+    }
+    .app-home-hero__inner .app-element-scroll-indicator {
+        display:none
+    }
+    .app-home-hero__sticker {
+        display:none
+    }
+    .app-home-hero__stars {
+        display:none
+    }
+    .app-home-hero__first-visual {
+        aspect-ratio:185/235;
+        min-width: 0;
+        min-width: auto;
+        top: -13vw;
+        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+    }
+    .app-home-hero__second-visual {
+        aspect-ratio:115/145;
+        min-width: 0;
+        min-width: auto;
+        top: 133vw;
+        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
+    }
+    .app-home-hero__first-visual {
+        aspect-ratio:185/235;
+        min-width: 0;
+        min-width: auto;
+        top: -13vw;
+        width: calc(var(--layout-column-width)*3 + var(--layout-columns-gap)*2)
+    }
+    .app-home-hero__second-visual {
+        aspect-ratio:115/145;
+        min-width: 0;
+        min-width: auto;
+        top: 133vw;
+        width: calc(var(--layout-column-width)*2 + var(--layout-columns-gap)*1)
+    }
+    .app-home-hero__view-exterior {
+        aspect-ratio:345/665;
+        grid-column: 1/span 6;
+        height: 100%;
+        margin-top: 32vw;
+        position: relative;
+        width: 100%
+    }
+    .app-home-hero__scroll-indicator {
+        display:none
+    }
+    .app-home-hero__title.app-element-rich-text {
+        grid-column:1/span 6;
+        left: 0;
+        max-width: 100%
+    }
+    .app-home-hero__title.app-element-rich-text .H1,.app-home-hero__title.app-element-rich-text h1 {
+        font-size:21vw;
+        line-height: 19vw
+    }
+    .P1 {
+        font-size:3.8vw;
+        line-height: 4vw
+    }
+}
+
+@media(min-width: 800px) {
+    :root {
+        --layout-columns-count:12;
+        --layout-columns-gap: 2.1vw;
+        --layout-margin: 3vw;
+    }
 }
