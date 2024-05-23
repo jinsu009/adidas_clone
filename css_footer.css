@@ -1,0 +1,80 @@
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-home .app-footer {
+    margin-top: 1.8vw
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright © 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-footer {
+    color:red;
+    background: var(--c-black);
+    overflow: hidden;
+    padding-bottom: 3vw;
+    padding-top: 7vw;
+    position: relative;
+    width: 100vw  
+}
+
+.app-footer__principal {
+    grid-column: 1 / span 6;
+    z-index: 1;
+}
+
+.app-footer__newsletter-title.H2 {
+    font-size: 2vw;
+    line-height: 3vw
+}
+
+.app-footer__partners {
+    display: flex;
+    flex-direction: column;
+    grid-column: 8/span 5;
+    position: relative;
+    z-index: 1
+}
+
+
+
+.app-footer__bottom {
+    display: flex;
+    grid-column: 1 / span 12;
+    margin-left: auto;
+    margin-top: 7;
+    z-index: 1;
+}
+
+.app-footer__paris-e-c__logo {
+    align-items: center;
+    background: var(--c-grey);
+    display: flex;
+    height: 100%;
+    justify-content: center
+}
+
+.app-footer__paris-e-c__logo svg {
+    height: 65%;
+    width: auto
+}
+
+@media(max-width: 800px) {
+    .app-home .app-footer {
+        margin-top:22vw
+    }
+    .app-footer {
+        padding-bottom:4vw;
+        padding-top: 16vw
+    }
+    .app-footer__newsletter-title.H2 {
+        font-size:9vw;
+        line-height: 10vw
+    }
+    .app-footer__paris-e-c__logo svg {
+        height:45%;
+        width: auto
+    }
+}

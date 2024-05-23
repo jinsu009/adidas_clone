@@ -334,6 +334,15 @@ input[id="icon"]:checked + label > span:nth-child(2){
     width: 100%
 }
 
+.app-home-hero__localisation {
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/span 6;
+    left: 0;
+    position: absolute
+}
+
 .app-home-hero__inner .app-element-scroll-indicator {
     bottom: 0;
     left: 50%;
@@ -347,6 +356,25 @@ input[id="icon"]:checked + label > span:nth-child(2){
     opacity: 0;
     pointer-events: none;
     transition-delay: 0s
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+ .app-element-scroll-indicator {
+    align-items: center;
+    background: var(--c-blue-adidas);
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    outline: 1px solid var(--c-black);
+    padding: 1.3888888889vw 1.7361111111vw;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 2
 }
 
 .app-home-hero__stars,.app-home-hero__sticker {
@@ -598,6 +626,10 @@ input[id="icon"]:checked + label > span:nth-child(2){
     overflow: hidden
 }
 
+.H2 .bold,.H2 strong,.H2.bold,.H2.medium {
+    font-family: ITCFranklinGothicLT-DmCp
+}
+
 /*!
  * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
  * Copyright Â© 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
@@ -743,6 +775,9 @@ input[id="icon"]:checked + label > span:nth-child(2){
     .app-home-hero__title.app-element-rich-text .H1,.app-home-hero__title.app-element-rich-text h1 {
         font-size:21vw;
         line-height: 19vw
+    }
+    .app-home-hero__localisation {
+        display:none
     }
     .P1 {
         font-size:3.8vw;
