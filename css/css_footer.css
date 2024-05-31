@@ -1,3 +1,175 @@
+
+.app_footer{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    width: 100%;
+    background-color: var(--c-black);
+    color: var(--c-white);    
+    font-family: ITCFranklinGothicLT-DmCp;
+}
+
+.app_footer_principal{
+    height: 400px;
+    width:880px;
+}
+
+.app_footer_partenairse{
+    background-color: palegoldenrod;
+    height: 620px;
+    width: 550px;
+    .img{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.partenar_msg{
+    color: var(--c-grey);
+    font-size: 42px;
+    line-height: 55px;
+}
+
+.partenairse_logo_wrapper{    
+    background-color: greenyellow;
+    display: flex;    
+    flex-direction: column;
+    height: 60%;
+    .adidas_logo > img{
+        width: 150px !important;
+    };     
+}
+
+.footer_adidas_wrapper{
+    background-color: yellow;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;    
+    .bloc{
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.adidas_logo{
+   border: 1px solid var(--c-white);
+}
+
+.footer_right_wrapper{
+    display: flex;
+    flex-direction: column;    
+    height: 100%;
+    .footer_right_bot_top, .footer_right_bot_bot{
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.footer_right_wrapper > .bloc{
+    width: 50%;
+    height: 50%;
+}
+
+
+.pulse_bud_logo{
+    background-color: orange;
+    width: 42%;
+    height: 148px;
+    display: flex;       
+    div{
+        border: 1px solid var(--c-white)
+    }
+}
+
+.spotify_wrapper{
+    
+}
+
+.footer_paris_wrapper{
+    background-color: palevioletred;
+}
+
+.app_footer_bottom{
+    font-size: 20px;
+    line-height: 26px;
+    background-color: rgb(170, 170, 20);
+    height:45px;
+    width: 100%;
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    p {
+        margin:0px;
+        /* letter-spacing: -0.4em; */
+    }; 
+}
+
+a.footer_a:first-child{
+    color:red !important;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.footer_top{
+    display: flex;
+}
+
+.contact_sns{
+    color:var(--c-white);
+    display: flex;
+}
+
+.sns_icon_wrapper{    
+    width: 56px;
+    height: 56px;
+    border:1px solid var(--c-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc{
+/*     
+    width: 80%;
+    
+*/
+    border:1px solid var(--c-white);       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: auto;
+        width: 100%;
+    }
+} 
+
+/* .big{
+    background-color: lightgreen;
+} */
+
+.paris{
+    display: flex;
+    justify-content: space-between;
+    p{
+        font-size: 22px;
+        line-height: 26px;
+        color: var(--c-white);
+        padding: 0 26px;
+    }
+}
+
+.footer_paris_logo{
+    color: var(--c-white);
+    background-color: var(--c-grey);
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
 @media(max-width: 800px) {
     
 }
