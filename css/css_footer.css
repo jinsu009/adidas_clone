@@ -14,6 +14,69 @@
     width:880px;
 }
 
+/*partenar*/
+.partenar_wrapper{
+    background-color: blanchedalmond;
+    height: 620px;
+    width: 550px;    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top_logo{
+    display: flex;
+    width: 100%;
+}
+
+.logo{
+    width: 50%;
+    height: 100%;
+}
+
+.four_logo{
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+}
+
+.four_top , .four_bot{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.middle_logo{
+    display: flex;
+    width: 50%;    
+}
+
+.bottom_logo{
+    width: 100%;
+    display: flex;
+}
+
+.logo_wrapper{
+    border:1px solid var(--c-white);
+}
+
+.square_big{
+    background-color: palegoldenrod;
+    width: 100%;
+    height: 100%;
+}
+
+.square{
+    background-color: lightcoral;
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle{
+    background-color: greenyellow;    
+    width: 50%;
+    height: 98%;
+}
+
 .app_footer_partenairse{
     background-color: palegoldenrod;
     height: 620px;
@@ -33,7 +96,7 @@
 .partenar_logo_table{
     background-color: lightcoral;
     border:1px solid var(--c-white);  
-    width: 550px;   
+    width: 80%;   
     margin: auto;
     text-align: center;    
     tr{
@@ -46,14 +109,19 @@
 }
 
 .adidas_logo{
-    width: 50%;
-    height: auto;
+    img{
+        width: 146px;
+        height: 92px;
+    }    
 }
 
 .img_wrap{
     background-color: blue;
+    height: 100%;
+    width: 100%;
     img{
-        margin:10px;
+        height: 23px;
+        width: 72px;
     }
 }
 
