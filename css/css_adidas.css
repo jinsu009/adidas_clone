@@ -74,7 +74,6 @@ body{
     z-index: 3; /* 낮은 속성값 보다 큰 속성값이 늦게 그려짐 */
     display: flex; 
     position: fixed; /* scroll 에서 고정 */
-    background-color: lightblue;
 }
 
 .home_wrapper{
