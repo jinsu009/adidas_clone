@@ -53,3 +53,23 @@
     - relative : 원래 배치되어야 할 위치에서 지정한 값 만큼 떨어진 곳에 요소를 배치 
     - absolute : 가장 가까운 상위 요소의 위치를 기준으로 지정한 값 만큼 떨어진 곳에 요소 배치 
     - fixed : 웹 브라우저 화면 전체를 기준으로 배치, 스크롤을 움직여도 고정되어 있다. 
+
+
+▷ transform
+    - 회전, 크기, 기울기, 이동효과를 줄 수 있다. 
+    - matrix : 모든 요소를 한번에 작성 할 수 있다.     
+    - translate : 이동
+    - scale : 확대
+    - rotate : 회전 (단위 : deg , 양수 : 시계방향, 음수 : 반시계방향)
+    - skew : 기울기 
+    - ex) 
+        transform : scale(3,2) rotate(45deg)
+        transform : matrix(3con45, 2sin45, -3sin45, 2con45, 0, 0)
+
+▷ aspect-ratio
+    - 요소의 가로/세로 비율을 설정 
+    - /(슬래시) 가 없을 경우 가로/세로 비율의 값 을 정의
+    - ex) 
+        aspect-ratio : 1.5 (1.5/1)
+        aspect-ratio : 16/9
+        aspect-ratio : 1 

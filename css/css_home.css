@@ -35,13 +35,31 @@
 }
 
 .mask{
-    width: 250px;
-    height: 250px;   
+    width: 420px;
+    min-width: 250px;    
+    /*height: 250px;   */ 
+    position: absolute;    
+    top : -290px;
+    aspect-ratio: 350 / 440;    
+    translate: none;
+    rotate: none;
+    scale: none;
+    transform: translate3d(0px, 0%, 0px) rotate(5deg) scale(1.00001, 1.00001);
+    opacity: 1;
 }
 
-.basketball{
-    width: 200px;
-    height: 200px;
+.basketball{    
+    width: 150px;
+    /* height: 200px; */
+    min-width: 250px;
+    position: absolute;
+    aspect-ratio: 300 / 400;
+    translate: none;
+    rotate: none;
+    scale: none;
+    transform: translate3d(500px, 20%, 0px) rotate(-4deg) scale(1.00001, 1.00001);
+    opacity: 1;
+}
 }
 
 .buger_wrapper{
@@ -56,6 +74,64 @@
     width: 100%;
     height: 2px;
     background-color: var(--c-black);
+}
+
+.middle_text{
+    top: 220px;
+    font-family: ITCFranklinGothicLT-DmCp;
+    font-size: 130px;
+    line-height: 80%;
+    position: relative;
+    z-index: 1;
+    margin-left: 100px;
+    max-width: 70%;
+    height: 440px;
+    .white_text{
+        -webkit-text-stroke: 1px #000;
+        color:transparent;
+    };
+    .black_text{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.home_stardium{
+    border: 1px solid black;
+    width: 30%;
+    background-color: aquamarine;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 164px;
+    height: 80%;
+    .radius_square{
+        width: 10px;
+        height: 10px;        
+        position: absolute;
+        background-color: black;
+    }
+
+    .top_left{
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+    .top_right{
+        right: 0;
+        top: 0;
+        transform: translate(50%, -50%);
+    }
+    .bot_left{
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+    }
+    .bot_right{
+        bottom: 0;
+        right: 0;   
+        transform: translate(50%, 50%);
+    }
 }
 
 .header_scroll{
@@ -92,3 +168,4 @@
         margin:0px;
     }
 }
+
