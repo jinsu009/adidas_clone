@@ -28,6 +28,7 @@
 }
 
 .home_wrapper{
+    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     img , picture {
@@ -172,24 +173,6 @@
     }
 }
 
-.app_middle{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: orange;
-    margin-bottom: 5.5555555556vw;
-    margin-top: 9.0277777778vw;
-    width: 100%;
-    .first_msg{        
-        -webkit-text-stroke: 1px var(--c-black);
-        -webkit-text-fill-color: transparent; 
-    }
-    .h2{
-        font-family: ITCFranklinGothicLT-DmCp;
-        font-size: 128px;
-        line-height: 400px;
-    }
-}
 
 .voir_div{
     width: 335px;

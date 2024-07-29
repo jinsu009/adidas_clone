@@ -1,0 +1,17 @@
+
+.slider_wrapper{
+    background-color: orange;
+    width: 100%;
+}
+
+.app_middle{
+    .first_msg{        
+        -webkit-text-stroke: 1px var(--c-black);
+        -webkit-text-fill-color: transparent; 
+    }
+    .h2{
+        font-family: ITCFranklinGothicLT-DmCp;
+        font-size: 128px;
+        line-height: 400px;
+    }
+}
